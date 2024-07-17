@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' kodamachameleon.com; script-src 'self'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Mini-Kodama-Satisfied.PNG') }}" type="image/x-icon">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="main-container">
+            <h1>Community</h1>
+            <div class="bi-column">
+                <div>
+                    <img src="/static/img/Mini-Kodama-Motivated.PNG">
+                </div>
+                <div>
+                    <p>
+                        The Cyber Threat Intelligence world is probably smaller then you think! 
+                        There's nothing quite like sharing good gouge with a trusted friend whether thats from a training program, conference, or a volunteer organization. 
+                        Take a look at some of our favorites. 
+                        Who knows? 
+                        We just might bump into each other along the way.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% for post in all_posts %}
+        <div class="main-container">
+            {{ post.content }}
+        </div>
+        {% endfor %}
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

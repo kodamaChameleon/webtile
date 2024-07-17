@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' kodamachameleon.com; script-src 'self'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Mini-Kodama-Satisfied.PNG') }}" type="image/x-icon">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="main-container">
+            <h1>Featured</h1>
+            <article>
+                <h2>{{ featured_post.metadata.title }}</h2>
+                <p>{{ featured_post.content|safe }}</p>
+                <p><a href="/post/{{ featured_post.filename }}">Read more</a></p>
+            </article>
+        </div>
+        <div class="main-container">
+            <h1>Latest</h1>
+            <div class="tri-column">
+                {% for post in latest_post %}
+                <article>
+                    <h2>{{ post.metadata.title }}</h2>
+                    <p>{{ post.content|safe }}</p>
+                    <p><a href="/post/{{ post.filename }}">Read more</a></p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="main-container">
+            <h2>Archive</h2>
+            <div class="filters">
+                <select id="filter-year">
+                    <option value="">All Years</option>
+                </select>
+                <select id="filter-month">
+                    <option value="">All Months</option>
+                </select>
+                <select id="filter-tags">
+                    <option value="">All Tags</option>
+                </select>
+            </div>
+            <ul class="blog-posts" id="post-list">
+                {% for post in all_posts %}
+                <li data-year="{{ post.date.strftime('%Y') }}" data-month="{{ post.date.strftime('%m') }}" data-tags="{% if post.metadata and post.metadata.tags %}{{ post.metadata.tags | join(', ') | safe }}{% endif %}">
+                    <a href="/post/{{ post.filename }}">{{ post.metadata.title }}:</a> 
+                    {{ post.metadata.date }}, #{% if post.metadata and post.metadata.tags %}{{ post.metadata.tags | join(', #') | safe }}{% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>        
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% include 'footer.html' %}
+</body>
+</html>

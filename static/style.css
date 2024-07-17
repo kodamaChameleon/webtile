@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('/static/fonts/PressStart2P-Regular.ttf') format('truetype');
+    /* Add additional formats as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'PressStart2P', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #000000;
+}
+
+/* Header */
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #04122a;
+    color: #fff;
+    padding: 1rem;
+    border-bottom: solid 3px #ffffff;
+}
+
+.header-logo img {
+    height: 50px;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.header-title {
+    text-align: center;
+    flex: 1;
+}
+
+.header-menu {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #04122a;
+    color: white;
+    padding: 10px;
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #04122a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    color: #49eaff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+/* Main */
+
+main {
+    padding: 1rem;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.main-container {
+    margin: 1rem;
+    padding: 1rem;
+    color: #49eaff;
+    background-color: #04122a;
+    border-top: 1px solid #2ee948;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.main-container img {
+    max-width: 80%;
+}
+
+select {
+    font-family: 'PressStart2P';
+    background-color: #000000;
+    color: #2ee948;
+}
+
+/* Footer */
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: .2rem;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
+
+.icon {
+    height: 36px;
+}
+
+/* Fonts */
+h1 {
+    font-size: 1.25rem;
+}
+h1, h2 {
+    color: #2ee948;
+}
+h2 {
+    font-size: 1rem;
+}
+h3 {
+    color: #49eaff;
+    font-size: .75rem;
+}
+p {
+    font-size: 14px;
+}
+
+.blog-posts li {
+    list-style-type: none;
+}
+
+/* Handle columns */
+.tri-column {
+    display: flex;
+    flex-direction: row; 
+}
+
+.tri-column article {
+    max-width: 33%;
+    flex: 1;
+}
+
+.tri-column img {
+    max-height: 300px;
+}
+
+.bi-column {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.bi-column div {
+    max-width: 50%;
+}
+
+.bi-column p {
+    text-align: left;
+}
+
+.bi-column img {
+    max-height: 400px;
+}
+
+/* Collapse columns for thinner widths */
+@media (max-width: 1200px) {
+    .tri-column {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tri-column article {
+        max-width: 80%;
+    }
+    .bi-column {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bi-column div {
+        max-width: 80%;
+    }
+    .bi-column p {
+        text-align: center;
+    }
+}
+
+/* Adjust Header for Mobile */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 12px;
+    }
+    header h3 {
+        font-size: 10px;
+    }
+}
+
+/* Adjust for Full Screen on Desktop */
+@media (min-width: 1400px) {
+    .main-container {
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 1rem 3rem 1rem 3rem;
+    }
+}

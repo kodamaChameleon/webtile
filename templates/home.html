@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' kodamachameleon.com; script-src 'self'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Mini-Kodama-Satisfied.PNG') }}" type="image/x-icon">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="main-container">
+            <h1>Home</h1>
+            <p>
+                Welcome to Kodama’s Corner! 
+                Come on in and curl up a tail. 
+                Looking for cheesy chameleon references while discussing serious cyber threats? 
+                You’ve come to the right place! 
+                Technology has become so integrated into our daily lives, one can struggle to keep track of all the risks as well as opportunities. 
+                I guess disconjugate eyes can come in pretty handy for more things then just tracking bugs (not the software kind). 
+                Whether it’s information security anecdotes, further training and certifications, or the latest cyber trends, we’ll be covering it all. 
+                Kodama’s Corner chronicles the journey of one techy lizard on his path of cyber threat intelligence (CTI). 
+                Will you come along?
+            </p>
+        </div>
+        <div class="main-container">
+            <h1>Updates</h1>
+            <div class="bi-column"> 
+                <div>
+                    <p>
+                        Does the website seem a little different to you? 
+                        That's because it is! 
+                        We've made some changes around here and the best part is, it's all open-source. 
+                        Want to see the source code for this website, break it, debug it, use it in your own site? 
+                        <a href="#" target="_blank">Be our guest</a>!
+                        We love giving back to the community! 
+                    </p>
+                </div>
+                <div>
+                    <img src="/static/img/Mini-Kodama-Think.PNG">
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <h1>About</h1>
+            <div class="bi-column">
+                <div>
+                    <img alt="Kodama" src="/static/img/kodama.gif">
+                </div>
+                <div>
+                    <p>
+                        I am a Cyber Threat Intelligence (CTI) analyst on a quest to protect vulnerable people as a practical demonstration of a personal faith.
+                    </p>
+                    <p>
+                        Kodama — (木霊, 木魂 or 木魅) spirits in Japanese folklore that inhabit trees.
+                    </p>
+                    <p>
+                        Chameleon — a small slow-moving Old World lizard with a prehensile tail, long extensible tongue, protruding eyes that rotate independently, and a highly developed ability to change color.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <h1>Follow Me</h1>
+            <p>
+                To stay up-to-date on the latest articles, consider following using one of our social handles such as twitter or discord.
+            </p>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

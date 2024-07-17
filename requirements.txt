@@ -1,0 +1,6 @@
+flask
+markdown
+python-dotenv
+python-frontmatter
+colorama
+gunicorn

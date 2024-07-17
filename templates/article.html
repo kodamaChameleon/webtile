@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' kodamachameleon.com; script-src 'self'">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Mini-Kodama-Satisfied.PNG') }}" type="image/x-icon">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="main-container">
+            {% if post.metadata.title %}
+            <h1>{{ post.metadata.title | safe }}</h1>
+            {% endif %}
+            <h3>
+                {% if post.metadata.author %}{{ post.metadata.author | safe }}{% endif %} | 
+                {% if post.metadata.date %}{{ post.metadata.date | safe }}{% endif %}
+            </h3>
+        </div>
+        <div class="main-container">
+            {% if post.content %}
+            {{ post.content | safe }}
+            {% else %}
+            <h1>403 Error</h1>
+            <p>Content not found</p>
+            {% endif %}
+        </div>
+        {% if post.metadata.tags %}
+        <div class="main-container">
+            <h2>Tags</h2>
+            <p>
+                {% for tag in post.metadata.tags %}
+                #{{ tag | safe }} 
+                {% endfor %}
+            </p>
+        </div>
+        {% endif %}
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>
