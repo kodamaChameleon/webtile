@@ -1,5 +1,3 @@
-🚨 [KodamaChameleon.com](https://kodamachameleon.com) has not been updated yet and is still utilizing Word Press. This notice will come down once it has been converted.
-
 # Webtile
 **A Simple Markdown Website Content Manager**
 
@@ -100,3 +98,5 @@ Contributions are welcome! Please fork this repository and submit pull requests.
 
 ---
 Made with ❤️ by Kodama Chameleon
+
+🚨 **Disclaimer**: [KodamaChameleon.com](https://kodamachameleon.com) is currently in vendor lock and does not implement webtile. Possibly at some point in the future.
